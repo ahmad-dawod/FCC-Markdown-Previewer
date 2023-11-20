@@ -37,25 +37,18 @@ There's also [links](https://codepen.io/ahmad-dawoud/pen/NWjjvxe), and
 
 function App() {
   const [markdownText, setMarkdownText] = useState<string>(defaultMarkdown)
-  const deale = document.querySelector("#Ediv")
-  const dealp = document.querySelector("#preview")
-  const funp = function(){
-    deale?.classList.toggle("hiad")
-  }
-  const fune = function(){
-    dealp?.classList.toggle("hiad")
-  }
+  
 
   return (
     <>
       <div><h1>Markdown Previewer</h1></div>
       <div className='boxes-container'>
         <div id='Ediv'>
-        <p id="heade" onClick={fune}>Editor</p>
+        <p id="heade">Editor</p>
         <textarea name="editor" id="editor" value={markdownText} onChange={(e) => setMarkdownText(e.target.value)}></textarea>
         </div>
         <div id="preview">
-          <p id="headp" onClick={funp}>Previewer</p>
+          <p id="headp">Previewer</p>
           <div id="pre">
           <ReactMarkdown>{markdownText}</ReactMarkdown>
           </div>
